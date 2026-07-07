@@ -67,12 +67,120 @@
 }
 
 
-/* Hero copy styles */
+/*======================================
+//--//-->   HERO
+======================================*/
+
+.hero-v2 {
+  position: relative;
+  overflow: hidden;
+  padding: 190px 0 120px;
+  background: radial-gradient(circle at 80% 20%, #16233f 0%, #0b1120 55%, #060910 100%);
+  color: #fff;
+}
+
+.hero-v2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+}
+
+.hero-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(3px 3px at 10% 20%, rgba(255, 189, 57, 0.9), transparent 60%),
+    radial-gradient(2px 2px at 25% 65%, rgba(255, 189, 57, 0.7), transparent 60%),
+    radial-gradient(3px 3px at 60% 15%, rgba(255, 189, 57, 0.8), transparent 60%),
+    radial-gradient(2px 2px at 85% 35%, rgba(255, 189, 57, 0.6), transparent 60%),
+    radial-gradient(2px 2px at 45% 80%, rgba(255, 189, 57, 0.7), transparent 60%),
+    radial-gradient(3px 3px at 92% 70%, rgba(255, 189, 57, 0.5), transparent 60%),
+    radial-gradient(2px 2px at 15% 90%, rgba(255, 189, 57, 0.6), transparent 60%);
+  pointer-events: none;
+}
+
+.hero-v2 .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-v2 .subheading {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffbd39;
+  margin-bottom: 5px;
+}
+
+.hero-v2 h1 {
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.hero-v2 h1 span {
+  color: #ffbd39;
+}
+
+.hero-v2 h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.hero-v2-photo-wrap img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+@media (min-width: 992px) {
+  .hero-v2-photo-wrap {
+    position: relative;
+  }
+  .hero-v2-photo-wrap img {
+    max-width: 480px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+    mask-image: linear-gradient(to right, transparent 0%, black 18%);
+  }
+}
+
 .hero-tagline .subheading {
   letter-spacing: 1px;
 }
 
+@media (max-width: 991.98px) {
+  .hero-v2 {
+    padding: 150px 0 60px;
+    text-align: center;
+  }
+  .hero-v2-photo-wrap {
+    margin-top: 50px;
+  }
+  .hero-v2 .hero-tagline {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 767.98px) {
+  .hero-v2 {
+    padding: 130px 0 50px;
+  }
+  .hero-v2 h1 {
+    font-size: 34px;
+  }
+  .hero-v2 h2 {
+    font-size: 21px;
+  }
   .hero-tagline .subheading {
     font-size: 12px;
     letter-spacing: 0.5px;
@@ -81,21 +189,8 @@
     font-size: 16px !important;
     line-height: 1.5 !important;
   }
-  /* The single hero slide has no real content to slide between; give it
-     flexible height on small screens so longer copy is never clipped by
-     the carousel's fixed-height, overflow-hidden slide box. */
-  .home-slider .owl-stage-outer,
-  .home-slider .owl-stage,
-  .home-slider .owl-item,
-  .home-slider .slider-item {
-    height: auto !important;
-    min-height: 720px;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-  }
-  .owl-carousel.home-slider .slider-item .slider-text {
-    height: auto !important;
-    min-height: 720px;
+  .hero-v2-photo-wrap {
+    display: none;
   }
 }
 
@@ -176,32 +271,26 @@
 	      </div>
 	    </div>
 	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Motaleb Hossain Arko</span></h1>
-			            <h2 class="mb-2">Senior Software Engineer</h2>
-						<h2 class="hero-tagline d-flex" style="margin-bottom: 0"><span class="subheading">Full-Stack Developer | Laravel ERP Developer | Backend Specialist | VPS Deployment Engineer</span></h2>
-						<br>
-						<p class="hero-intro">I design, develop, and deploy scalable business software, ERP systems, payment platforms, admin dashboards, and full-stack web applications using modern technologies and production-ready deployment workflows.</p>
-			            <p><a href="#project-section" class="btn btn-primary py-3 px-4">View Projects</a>
-							<a href="#contact-section" class="btn btn-white btn-outline-white py-3 px-4">Contact Me</a>
-							<a href="https://drive.google.com/file/d/1VUgX7d8mBD6cYIIg03bm61eTxZb4r72-/view?usp=sharing" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">Download CV</a></p>
-		            </div>
-		          </div>
-	        	</div>
+	  <section id="home-section" class="hero-v2">
+	    <div class="container">
+	      <div class="row align-items-center">
+	        <div class="col-lg-7 ftco-animate">
+	          <span class="subheading">Hello!</span>
+	          <h1 class="mb-3 mt-3">I'm <span>Motaleb Hossain Arko</span></h1>
+	          <h2 class="mb-2">Senior Software Engineer</h2>
+	          <h2 class="hero-tagline d-flex" style="margin-bottom: 0"><span class="subheading">Full-Stack Developer | Laravel ERP Developer | Backend Specialist | VPS Deployment Engineer</span></h2>
+	          <p class="hero-intro mt-4">I design, develop, and deploy scalable business software, ERP systems, payment platforms, admin dashboards, and full-stack web applications using modern technologies and production-ready deployment workflows.</p>
+	          <p class="mt-4"><a href="#project-section" class="btn btn-primary py-3 px-4">View Projects</a>
+	            <a href="#contact-section" class="btn btn-white btn-outline-white py-3 px-4">Contact Me</a>
+	            <a href="https://drive.google.com/file/d/1VUgX7d8mBD6cYIIg03bm61eTxZb4r72-/view?usp=sharing" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">Download CV</a></p>
+	        </div>
+	        <div class="col-lg-5 text-center ftco-animate">
+	          <div class="hero-v2-photo-wrap">
+	            <img src="images/hero-photo.png" class="img-fluid" alt="Motaleb Hossain Arko">
+	          </div>
 	        </div>
 	      </div>
-		</div>
+	    </div>
     </section>
 
 
@@ -295,7 +384,7 @@
 						<div class="counter-wrap ftco-animate d-flex mt-md-3">
 							<div class="text">
 								<p class="mb-4">
-									<span class="number" data-number="15">0</span> <span>+</span>
+									<span class="number" data-number="30">0</span> <span>+</span>
 									<span>&nbsp; Projects completed</span>
 								</p>
 								<p><a href="https://www.linkedin.com/in/arko-ahmed-a712371b5" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
@@ -672,7 +761,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_2.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -707,12 +796,12 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://masformation.com/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/about.png');">
+              <a href="https://masformation.com/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/masformation.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://masformation.com/" target="_blank">MAS Formation Website</a></h3>
-                <p>Developed the Mas Formation business website as part of Faiza Express's wholesale and fulfillment platform.</p>
+                <h3 class="heading"><a href="https://masformation.com/" target="_blank">Mas Formation ERP System</a></h3>
+                <p>Developed the Mas Formation ERP system to streamline operations and improve efficiency for their USA/UK Company Formation platform.</p>
               </div>
             </div>
           </div>
@@ -720,7 +809,7 @@
         <div class="row d-flex justify-content-center mt-4">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/loc.png');">
+              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/traking site.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -747,7 +836,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="15">0</strong>
+                <strong class="number" data-number="30">0</strong>
                 <span>Projects</span>
               </div>
             </div>
