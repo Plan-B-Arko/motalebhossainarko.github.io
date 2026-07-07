@@ -67,43 +67,35 @@
 }
 
 
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
+/* Hero copy styles */
+.hero-tagline .subheading {
+  letter-spacing: 1px;
 }
 
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
+@media (max-width: 767.98px) {
+  .hero-tagline .subheading {
+    font-size: 12px;
+    letter-spacing: 0.5px;
   }
-  to {
-    width: 100%;
+  .hero-intro {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
   }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
+  /* The single hero slide has no real content to slide between; give it
+     flexible height on small screens so longer copy is never clipped by
+     the carousel's fixed-height, overflow-hidden slide box. */
+  .home-slider .owl-stage-outer,
+  .home-slider .owl-stage,
+  .home-slider .owl-item,
+  .home-slider .slider-item {
+    height: auto !important;
+    min-height: 720px;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
   }
-  to {
-    width: 0;
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: auto !important;
+    min-height: 720px;
   }
 }
 
@@ -197,52 +189,10 @@
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Motaleb Hossain Arko</span></h1>
-						
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'Senior Software Engineer  ',
-						'Full-Stack Developer  ',
-						'Laravel ERP Developer  ',
-						'Backend Specialist  ',
-						'VPS Deployment Engineer  ',
-						];
-
-						
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
+			            <h2 class="mb-2">Senior Software Engineer</h2>
+						<h2 class="hero-tagline d-flex" style="margin-bottom: 0"><span class="subheading">Full-Stack Developer | Laravel ERP Developer | Backend Specialist | VPS Deployment Engineer</span></h2>
 						<br>
-						<br>
-			            <h2>Senior Software Engineer</h2>
-						<h2 class="d-flex" style="margin-bottom: 0"><span class="subheading">Full-Stack Developer | Laravel ERP Developer | Backend Specialist | VPS Deployment Engineer</span></h2>
-						<br>
-						<p>I design, develop, and deploy scalable business software, ERP systems, payment platforms, admin dashboards, and full-stack web applications using modern technologies and production-ready deployment workflows.</p>
+						<p class="hero-intro">I design, develop, and deploy scalable business software, ERP systems, payment platforms, admin dashboards, and full-stack web applications using modern technologies and production-ready deployment workflows.</p>
 			            <p><a href="#project-section" class="btn btn-primary py-3 px-4">View Projects</a>
 							<a href="#contact-section" class="btn btn-white btn-outline-white py-3 px-4">Contact Me</a>
 							<a href="https://drive.google.com/file/d/1VUgX7d8mBD6cYIIg03bm61eTxZb4r72-/view?usp=sharing" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">Download CV</a></p>
@@ -757,11 +707,11 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/about.png');">
+              <a href="https://masformation.com/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/about.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="#">MAS Formation Website</a></h3>
+                <h3 class="heading"><a href="https://masformation.com/" target="_blank">MAS Formation Website</a></h3>
                 <p>Developed the Mas Formation business website as part of Faiza Express's wholesale and fulfillment platform.</p>
               </div>
             </div>
